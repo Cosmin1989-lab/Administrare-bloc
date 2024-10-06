@@ -34,3 +34,4 @@ class UserRegistrationForm(forms.ModelForm):
 
         if password and password_confirm and password != password_confirm:
             raise forms.ValidationError("Parolele nu se potrivesc.")
+
