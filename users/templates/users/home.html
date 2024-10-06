@@ -1,0 +1,16 @@
+{% extends "users/base_generic.html" %}
+
+{% block content %}
+<h1>Bun venit la aplicația de gestionare a locatarilor!</h1>
+<p><a href="{% url 'lista_locatari' %}">Vezi lista locatarilor</a></p>
+<p><a href="{% url 'lista_apartamente' %}">Vezi lista apartamentelor</a></p>
+<p><a href="{% url 'lista_facturi' %}">Vezi lista facturilor</a></p>
+<p><a href="{% url 'adauga_locatar' %}">Adaugă locatar</a></p>
+<p><a href="{% url 'adauga_apartament' %}">Adaugă apartament</a></p>
+<p><a href="{% url 'adauga_factura' %}">Adaugă factură</a></p>
+{% endblock %}
+
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Deconectare</button>
+</form>

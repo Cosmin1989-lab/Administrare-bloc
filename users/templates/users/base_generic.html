@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ProjectOne{% endblock %}</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asigură că body-ul ocupă întreaga înălțime a viewport-ului */
+        }
+        nav {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav a:hover {
+            background: #e8491d;
+            border-radius: 5px;
+        }
+        .container {
+            flex: 1; /* Permite container-ului să ocupe tot spațiul disponibil */
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    {% if user.is_authenticated %}
+        <ul>
+            <li><a href="{% url 'home' %}">Acasă</a></li>
+            <li><a href="{% url 'lista_locatari' %}">Locatari</a></li>
+            <li><a href="{% url 'lista_apartamente' %}">Apartamente</a></li>
+            <li><a href="{% url 'lista_facturi' %}">Facturi</a></li>
+            <li><a href="{% url 'adauga_locatar' %}">Adaugă Locatar</a></li>
+            <li><a href="{% url 'adauga_apartament' %}">Adaugă Apartament</a></li>
+            <li><a href="{% url 'adauga_factura' %}">Adaugă Factură</a></li>
+            <li><a href="{% url 'logout' %}">Deconectare</a></li>
+        </ul>
+    {% else %}
+        <ul>
+            <li><a href="{% url 'login' %}">Autentificare</a></li>
+            <li><a href="{% url 'register' %}">Înregistrare</a></li>
+        </ul>
+    {% endif %}
+</nav>
+
+<hr>
+
+<div class="container">
+    {% block content %}
+    <h2>Bun venit{% if user.is_authenticated %}, {{ user.username }}!{% endif %}</h2>
+    <p>Aici poți gestiona locatarii, apartamentele și facturile.</p>
+    {% endblock %}
+</div>
+
+<footer>
+    <p>&copy; 2024 ProjectOne. Toate drepturile rezervate.</p>
+</footer>
+
+</body>
+</html>
+
+
+

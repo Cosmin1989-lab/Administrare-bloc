@@ -1,0 +1,25 @@
+{% extends "users/base_generic.html" %}
+
+{% block content %}
+<h2>Lista Facturilor</h2>
+<table>
+    <tr>
+        <th>Număr Factură</th>
+        <th>Locatar</th>
+        <th>Acțiuni</th>
+        <th>Suma</th>
+        <th>Data</th>
+    </tr>
+    {% for factura in facturi %}
+    <tr>
+        <td>{{ factura.id }}</td>
+        <td>{{ factura.locatar }}</td>
+        <td>{{ factura.suma }}</td>
+        <td>{{ factura.data }}</td>
+        <td>
+  <a href="{% url 'sterge_factura' factura.id %}" onclick="return confirm('Sigur vrei să ștergi acesta factura?');">Șterge</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

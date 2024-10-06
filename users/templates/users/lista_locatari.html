@@ -1,0 +1,21 @@
+{% extends "users/base_generic.html" %}
+
+{% block content %}
+<h2>Lista Locatarilor</h2>
+<table>
+    <tr>
+        <th>Nume</th>
+        <th>Număr Apartament</th>
+        <th>Acțiuni</th>
+    </tr>
+    {% for locatar in locatari %}
+    <tr>
+        <td>{{ locatar.nume }}</td>
+        <td>{{ locatar.apartament.numar }}</td>
+        <td>
+              <a href="{% url 'sterge_locatar' locatar.id %}" onclick="return confirm('Sigur vrei să ștergi acest locatar?');">Șterge</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
