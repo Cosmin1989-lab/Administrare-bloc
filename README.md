@@ -9,6 +9,7 @@ Gestionarea apartamentelor: Adăugare, vizualizare, editare și ștergere de apa
 Gestionarea facturilor: Utilizatorii pot adăuga, vizualiza și șterge facturi aferente locatarilor și apartamentelor.
 Sistem de navigație vizibil doar pentru utilizatorii autentificați: Bara de meniu care conține opțiunile de gestionare este vizibilă doar utilizatorilor autentificați.
 Redirecționare automată la pagina de login după deconectare, fără afișarea mesajului intermediar.
+
 Tehnologii utilizate:
 Django: Framework-ul principal pentru dezvoltarea aplicației web.
 HTML/CSS: Pentru structura și stilizarea paginilor.
