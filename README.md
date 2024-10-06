@@ -2,6 +2,7 @@ Aplicație de Gestionare a Locatarilor
 Aceasta este o aplicație web dezvoltată în Django pentru gestionarea locatarilor, apartamentelor și facturilor aferente. Aplicația permite utilizatorilor autentificați să vizualizeze și să gestioneze datele privind locatarii și apartamentele, precum și să adauge, editeze și șteargă facturi. De asemenea, suportă funcționalități de înregistrare, autentificare și deconectare a utilizatorilor.
 
 Caracteristici principale:
+
 Autentificare și înregistrare utilizatori: Aplicația permite autentificarea utilizatorilor în conturi existente sau înregistrarea de noi utilizatori.
 Gestionarea locatarilor: Adăugare, vizualizare, editare și ștergere de locatari.
 Gestionarea apartamentelor: Adăugare, vizualizare, editare și ștergere de apartamente.
